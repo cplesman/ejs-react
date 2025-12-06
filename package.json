@@ -1,0 +1,30 @@
+{
+  "name": "ejs-react-boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "build:prod": "NODE_ENV=production node build.js",
+    "dev": "npm run build && concurrently \"npm run watch\" \"nodemon --watch server --exec node server/server.js\"",
+    "watch": "nodemon --watch src --ext jsx --exec \"npm run build\"",
+    "start": "npm run build:prod && NODE_ENV=production node server/server.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "bootstrap": "^5.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "@babel/preset-react": "^7.23.0",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "watchify": "^4.0.0",
+    "concurrently": "^8.0.0",
+    "nodemon": "^2.0.22",
+    "terser": "^5.44.1"
+  }
+}
